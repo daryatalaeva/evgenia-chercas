@@ -601,6 +601,54 @@
       border: 1px solid rgba(140, 123, 107, 0.25);
     }
 
+    /* ─── FIRST SESSION & ENDING ────────────────────────────── */
+
+    .detail-section {
+      padding: 110px 60px;
+    }
+
+    .detail-section.cream { background: var(--cream); }
+    .detail-section.beige { background: var(--beige); }
+
+    .detail-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .detail-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--text);
+      line-height: 1.15;
+      position: sticky;
+      top: 100px;
+    }
+
+    .detail-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .detail-point {
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(140, 123, 107, 0.18);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    .detail-point:first-child {
+      border-top: 1px solid rgba(140, 123, 107, 0.18);
+    }
+
     /* ─── CTA ────────────────────────────────────────────────── */
 
     .cta {
@@ -684,6 +732,9 @@
       .faq { padding: 80px 36px; }
       .price { padding: 80px 36px; }
       .not-working { padding: 60px 36px; }
+      .detail-section { padding: 64px 36px; }
+      .detail-inner { grid-template-columns: 1fr; gap: 32px; }
+      .detail-heading { position: static; }
       .cta { padding: 90px 36px; }
       footer { padding: 28px 36px; }
     }
@@ -692,6 +743,10 @@
       nav {
         padding: 18px 24px;
       }
+
+      .detail-section { padding: 56px 24px; }
+      .detail-inner { grid-template-columns: 1fr; gap: 24px; }
+      .detail-heading { position: static; font-size: 1.8rem; }
 
       .hero {
         grid-template-columns: 1fr;
@@ -869,6 +924,18 @@
     </div>
   </section>
 
+  <!-- ─── NOT WORKING WITH ──────────────────────────────────── -->
+  <section class="not-working">
+    <div class="not-working-inner">
+      <p class="not-working-title">С чем не работаю</p>
+      <ul class="not-working-list">
+        <li>Лица младше 18 лет</li>
+        <li>Суицидальные риски</li>
+        <li>Клинические запросы<br><small style="opacity:0.6;font-size:0.8em;">(могу помочь с рекомендацией специалиста)</small></li>
+      </ul>
+    </div>
+  </section>
+
   <div class="divider"></div>
 
   <!-- ─── HOW IT WORKS ──────────────────────────────────────── -->
@@ -909,6 +976,18 @@
     </div>
   </section>
 
+  <!-- ─── FIRST SESSION ────────────────────────────────────── -->
+  <section class="detail-section cream" id="first-session">
+    <div class="detail-inner">
+      <h2 class="detail-heading">Первая встреча</h2>
+      <div class="detail-body">
+        <p class="detail-point">Я подробно расскажу о плане ближайших сессий и проведу диагностическое интервью.</p>
+        <p class="detail-point">Мы поговорим не только о запросе, но и о вашей жизни в целом. Это важно для формирования полной картины и более глубокого понимания вашей ситуации.</p>
+        <p class="detail-point">Если вас всё устраивает, мы заключаем рабочий контракт (сеттинг) и продолжаем работу.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ─── FORMATS ───────────────────────────────────────────── -->
   <section class="formats" id="formats">
     <div class="formats-inner">
@@ -927,6 +1006,17 @@
           <p class="format-card-desc">Для глубокой проработки: изменение устойчивых паттернов, работа с характером, исследование себя и построение нового способа проживать жизнь.</p>
           <span class="format-tag">Онлайн и офлайн</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ENDING ───────────────────────────────────────────── -->
+  <section class="detail-section beige" id="ending">
+    <div class="detail-inner">
+      <h2 class="detail-heading">Завершение работы</h2>
+      <div class="detail-body">
+        <p class="detail-point">Если мы принимаем решение завершить работу, для этого потребуется провести 2–3 заключительные встречи, чтобы подвести итоги и правильно завершиться.</p>
+        <p class="detail-point">После завершения или перерыва вы всегда можете вернуться к работе со мной. Это не представляет сложности и, скорее, гарантирует вашу безопасность в наших терапевтических отношениях.</p>
       </div>
     </div>
   </section>
@@ -993,18 +1083,6 @@
         <p class="price-duration">50 минут</p>
         <p class="price-note">Онлайн и офлайн</p>
       </div>
-    </div>
-  </section>
-
-  <!-- ─── NOT WORKING WITH ──────────────────────────────────── -->
-  <section class="not-working">
-    <div class="not-working-inner">
-      <p class="not-working-title">С чем не работаю</p>
-      <ul class="not-working-list">
-        <li>Лица младше 18 лет</li>
-        <li>Суицидальные риски</li>
-        <li>Клинические запросы<br><small style="opacity:0.6;font-size:0.8em;">(могу помочь с рекомендацией специалиста)</small></li>
-      </ul>
     </div>
   </section>
 
