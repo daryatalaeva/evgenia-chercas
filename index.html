@@ -145,6 +145,7 @@
       text-decoration: none;
       padding: 18px 36px;
       border: 1px solid var(--dark-brown);
+      border-radius: 6px;
       transition: background 0.3s, color 0.3s;
       align-self: flex-start;
     }
@@ -304,7 +305,7 @@
       gap: 60px;
       padding: 52px 0;
       border-bottom: 1px solid rgba(217, 206, 188, 0.12);
-      align-items: start;
+      align-items: center;
     }
 
     .process-phase-meta {
@@ -327,13 +328,14 @@
       font-size: 0.68rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: rgba(247, 242, 234, 0.5);
+      color: var(--sand);
     }
 
     .process-phase-body {
       display: flex;
       flex-direction: column;
       gap: 14px;
+      max-width: 520px;
     }
 
     .process-phase-body p {
@@ -619,6 +621,7 @@
       text-decoration: none;
       padding: 18px 42px;
       border: 1px solid var(--cream);
+      border-radius: 6px;
       transition: background 0.3s, color 0.3s;
     }
 
@@ -916,7 +919,7 @@
   <!-- ─── PROCESS ──────────────────────────────────────────── -->
   <section class="how-it-works" id="process">
     <div style="max-width:1200px;margin:0 auto;">
-      <p class="section-label">Процесс</p>
+
       <h2 class="section-title">Как устроена работа</h2>
       <div class="process-list">
 
@@ -949,11 +952,6 @@
             <span class="process-phase-title">Терапия</span>
           </div>
           <div class="process-phase-body">
-            <p>Наша работа может быть:</p>
-            <ul class="phase-list">
-              <li>Краткосрочной — до 10–15 встреч для решения конкретных, точечных сложностей.</li>
-              <li>Долгосрочной — от нескольких месяцев до нескольких лет для более глубокой проработки.</li>
-            </ul>
             <p>В процессе мы будем регулярно подводить итоги, при необходимости корректировать запрос и ставить новые цели.</p>
           </div>
         </div>
@@ -976,7 +974,7 @@
   <!-- ─── FORMATS ───────────────────────────────────────────── -->
   <section class="formats" id="formats">
     <div class="formats-inner">
-      <p class="section-label">Форматы работы</p>
+
       <h2 class="section-title">Форматы терапии</h2>
       <div class="formats-grid">
         <div class="format-card">
@@ -1000,8 +998,7 @@
   <!-- ─── FAQ ───────────────────────────────────────────────── -->
   <section class="faq" id="faq">
     <div class="faq-inner">
-      <p class="section-label">Вопросы и ответы</p>
-      <h2 class="section-title">FAQ</h2>
+      <h2 class="section-title">Частые вопросы</h2>
       <div class="faq-list">
 
         <div class="faq-item">
