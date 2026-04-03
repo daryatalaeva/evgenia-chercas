@@ -167,6 +167,10 @@
       display: block;
     }
 
+    .hero-photo-mobile {
+      display: none;
+    }
+
     .hero-photo .photo-placeholder {
       width: 100%;
       height: 100%;
@@ -246,7 +250,7 @@
       font-weight: 300;
       font-size: 1.02rem;
       color: var(--text);
-      padding: 18px 0;
+      padding: 13px 0;
       border-bottom: 1px solid rgba(140, 123, 107, 0.18);
       display: flex;
       align-items: center;
@@ -582,7 +586,7 @@
 
     .section-not-working {
       background: var(--beige);
-      padding: 110px 60px;
+      padding: 110px 60px 55px;
     }
 
 
@@ -653,8 +657,13 @@
     /* ─── SECTION WRAPPERS ───────────────────────────────────── */
 
     .section-works {
-      padding: 110px 60px;
+      padding: 110px 60px 55px;
       background: var(--cream);
+    }
+
+    .section-works .topics-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
 
     /* ─── RESPONSIVE ─────────────────────────────────────────── */
@@ -664,11 +673,11 @@
       section { padding: 80px 36px; }
       .hero-content { padding: 120px 36px 80px; }
       .how-it-works { padding: 80px 36px; }
-      .section-works { padding: 80px 36px; }
+      .section-works { padding: 80px 36px 40px; }
       .formats { padding: 80px 36px; }
       .faq { padding: 80px 36px; }
       .price { padding: 80px 36px; }
-      .section-not-working { padding: 80px 36px; }
+      .section-not-working { padding: 80px 36px 40px; }
       .process-phase { grid-template-columns: 180px 1fr; gap: 40px; padding: 40px 0; }
       .cta { padding: 90px 36px; }
       footer { padding: 28px 36px; }
@@ -682,28 +691,66 @@
       .process-phase { grid-template-columns: 1fr; gap: 16px; padding: 36px 0; }
 
       .hero {
-        grid-template-columns: 1fr;
+        display: block;
         min-height: auto;
       }
 
-      .hero-photo {
-        order: -1;
-        height: 55vw;
-        min-height: 260px;
-        max-height: 420px;
+      .hero > .hero-photo {
+        display: none;
       }
 
       .hero-content {
-        padding: 56px 24px 72px;
+        padding: 96px 24px 64px;
+        display: flex;
+        flex-direction: column;
       }
 
       .hero-name {
         font-size: clamp(3.2rem, 13vw, 5rem);
-        margin-bottom: 32px;
+        margin-bottom: 24px;
+      }
+
+      .hero-photo-mobile {
+        display: block;
+        width: 100%;
+        height: 55vw;
+        min-height: 240px;
+        max-height: 400px;
+        overflow: hidden;
+        margin-bottom: 28px;
+        flex-shrink: 0;
+      }
+
+      .hero-photo-mobile img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        display: block;
+      }
+
+      .hero-photo-mobile .photo-placeholder {
+        width: 100%;
+        height: 100%;
+        background: var(--beige);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .hero-quote {
+        max-width: 100%;
+        margin-bottom: 36px;
+      }
+
+      .btn-primary {
+        align-self: stretch;
+        text-align: center;
       }
 
       section,
-      .section-works,
       .formats,
       .faq,
       .price,
@@ -711,8 +758,16 @@
         padding: 64px 24px;
       }
 
+      .section-works {
+        padding: 64px 24px 32px;
+      }
+
+      .section-works .topics-list {
+        grid-template-columns: 1fr;
+      }
+
       .section-not-working {
-        padding: 56px 24px;
+        padding: 56px 24px 28px;
       }
 
       .cta {
@@ -812,6 +867,7 @@
         <span>Евгения</span>
         <span>Черкас</span>
       </h1>
+      <div class="hero-photo-mobile" id="hero-photo-mobile"></div>
       <p class="hero-quote">«Все ответы уже находятся внутри вас. Моя задача — задать верный вопрос, который откроет к ним доступ»</p>
       <a href="https://t.me/jencherkas" target="_blank" rel="noopener" class="btn-primary">Записаться на консультацию</a>
     </div>
@@ -830,7 +886,6 @@
       <div class="topics-list">
         <div class="topic-item">Пониженное настроение</div>
         <div class="topic-item">Состояния апатии и депрессивные настроения</div>
-        <div class="topic-item">Трудности с переживанием радости от нового</div>
         <div class="topic-item">Нехватка мотивации</div>
         <div class="topic-item">Отсутствие ясных желаний и стремлений</div>
         <div class="topic-item">Тревожность</div>
@@ -1019,26 +1074,28 @@
 
   <!-- ─── SCRIPTS ───────────────────────────────────────────── -->
   <script>
-    // ── Hero photo: img with fallback to placeholder ──────────
+    // ── Hero photo: populate desktop + mobile slots ───────────
     (function () {
-      var wrap = document.getElementById('hero-photo-wrap');
-      var img = new Image();
-      img.src = 'images/photo-hero.jpg';
-      img.alt = 'Евгения Черкас';
-      img.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:center top;display:block;';
+      var src = 'images/photo-hero.jpg';
 
-      img.onload = function () {
-        wrap.appendChild(img);
-      };
+      function fillSlot(wrap, isMobile) {
+        var img = new Image();
+        img.src = src;
+        img.alt = 'Евгения Черкас';
+        img.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:top center;display:block;';
+        img.onload = function () { wrap.appendChild(img); };
+        img.onerror = function () {
+          var ph = document.createElement('div');
+          ph.className = 'photo-placeholder';
+          ph.innerHTML =
+            '<span class="photo-placeholder-text">Фото</span>' +
+            '<span class="photo-placeholder-sub">Евгения Черкас</span>';
+          wrap.appendChild(ph);
+        };
+      }
 
-      img.onerror = function () {
-        var ph = document.createElement('div');
-        ph.className = 'photo-placeholder';
-        ph.innerHTML =
-          '<span class="photo-placeholder-text">Фото</span>' +
-          '<span class="photo-placeholder-sub">Евгения Черкас</span>';
-        wrap.appendChild(ph);
-      };
+      fillSlot(document.getElementById('hero-photo-wrap'), false);
+      fillSlot(document.getElementById('hero-photo-mobile'), true);
     })();
 
     // ── FAQ accordion ─────────────────────────────────────────
