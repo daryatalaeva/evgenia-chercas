@@ -217,7 +217,7 @@
     .section-title {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
-      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-size: clamp(32px, 3.5vw, 48px);
       line-height: 1.12;
       color: var(--text);
       margin-bottom: 64px;
@@ -285,7 +285,7 @@
 
     .how-it-works {
       background: var(--dark-brown);
-      padding: 110px 60px;
+      padding: 64px 60px;
     }
 
     .how-it-works .section-label {
@@ -532,7 +532,7 @@
 
     .price {
       background: var(--beige);
-      text-align: center;
+      text-align: left;
     }
 
     .price-inner {
@@ -541,7 +541,7 @@
     }
 
     .price-card {
-      display: inline-block;
+      display: block;
       background: var(--cream);
       border: 1px solid rgba(140, 123, 107, 0.2);
       padding: 64px 80px;
@@ -672,19 +672,230 @@
 
     /* ─── RESPONSIVE ─────────────────────────────────────────── */
 
+    /* ─── HOW IT WORKS — TWO COLUMN ─────────────────────────── */
+
+    .hiw-layout {
+      display: grid;
+      grid-template-columns: 60% 40%;
+      align-items: stretch;
+      gap: 48px;
+    }
+
+    .hiw-steps {
+      /* content lives here */
+    }
+
+    .hiw-photo {
+      position: relative;
+      overflow: hidden;
+      min-height: 480px;
+    }
+
+    .hiw-photo img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* ─── PHOTO DIVIDER (photo-4) ────────────────────────────── */
+
+    .photo-section-divider {
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .photo-section-divider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+
+    /* ─── FORMATS PHOTO & CTA ────────────────────────────────── */
+
+    .formats-photo {
+      width: 100%;
+      height: 360px;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+
+    .formats-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .formats-cta {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    /* ─── EDUCATION ──────────────────────────────────────────── */
+
+    .education {
+      background: var(--beige);
+      padding: 110px 60px;
+    }
+
+    .edu-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .edu-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .edu-item {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(140, 123, 107, 0.2);
+    }
+
+    .edu-item:first-child {
+      border-top: 1px solid rgba(140, 123, 107, 0.2);
+    }
+
+    .edu-item-name {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .edu-item-detail {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--warm-brown);
+      margin-top: 4px;
+    }
+
+    .edu-certs {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+    }
+
+    .cert-card {
+      background: var(--sand);
+      aspect-ratio: 3/4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--warm-brown);
+    }
+
+    /* ─── PRICE TWO COLUMN ───────────────────────────────────── */
+
+    .price-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .price-left {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .price-right {
+      background: var(--cream);
+      border: 1px solid rgba(140, 123, 107, 0.2);
+      padding: 48px;
+    }
+
+    .contacts-title {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--warm-brown);
+      margin-bottom: 0;
+    }
+
+    .contacts-block {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0;
+    }
+
+    .contact-item {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(140, 123, 107, 0.15);
+    }
+
+    .contact-item:first-child {
+      border-top: 1px solid rgba(140, 123, 107, 0.15);
+    }
+
+    .contact-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--warm-brown);
+      margin-bottom: 6px;
+    }
+
+    .contact-value {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 1rem;
+      color: var(--text);
+      text-decoration: none;
+      display: block;
+    }
+
+    .contact-value:hover {
+      color: var(--warm-brown);
+    }
+
     @media (max-width: 1024px) {
       nav { padding: 20px 36px; }
       section { padding: 80px 36px; }
       .hero-content { padding: 120px 36px 80px; }
-      .how-it-works { padding: 80px 36px; }
+      .how-it-works { padding: 64px 36px; }
       .section-works { padding: 80px 36px 40px; }
       .formats { padding: 80px 36px; }
       .faq { padding: 80px 36px; }
       .price { padding: 80px 36px; }
+      .education { padding: 80px 36px; }
       .section-not-working { padding: 80px 36px 40px; }
       .process-phase { grid-template-columns: 180px 1fr; gap: 40px; padding: 40px 0; }
       .cta { padding: 90px 36px; }
       footer { padding: 28px 36px; }
+      .hiw-layout { gap: 32px; }
+      .price-layout { gap: 40px; }
+      .edu-grid { gap: 48px; }
     }
 
     @media (max-width: 768px) {
@@ -828,6 +1039,48 @@
 
       .section-title {
         margin-bottom: 44px;
+        font-size: 28px;
+      }
+
+      .hiw-layout {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .hiw-photo {
+        order: -1;
+        min-height: 280px;
+        position: relative;
+      }
+
+      .photo-section-divider {
+        height: 260px;
+      }
+
+      .formats-photo {
+        height: 260px;
+      }
+
+      .education {
+        padding: 64px 24px;
+      }
+
+      .edu-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .edu-certs {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .price-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .price-right {
+        padding: 32px 28px;
       }
     }
 
@@ -902,11 +1155,16 @@
     </div>
   </section>
 
+  <!-- ─── PHOTO DIVIDER ────────────────────────────────────── -->
+  <div class="photo-section-divider">
+    <img src="images/photo-4.jpg" alt="">
+  </div>
+
   <!-- ─── NOT WORKING WITH ──────────────────────────────────── -->
   <section class="section-not-working">
     <div class="works-inner">
 
-      <h2 class="section-title">С чем не работаю</h2>
+      <h2 class="section-title">С кем/чем не работаю</h2>
       <div class="topics-list">
         <div class="topic-item">Лица младше 18 лет</div>
         <div class="topic-item">Суицидальные риски</div>
@@ -920,54 +1178,60 @@
   <!-- ─── PROCESS ──────────────────────────────────────────── -->
   <section class="how-it-works" id="process">
     <div style="max-width:1200px;margin:0 auto;">
+      <div class="hiw-layout">
+        <div class="hiw-steps">
+          <h2 class="section-title">Как устроена работа</h2>
+          <div class="process-list">
 
-      <h2 class="section-title">Как устроена работа</h2>
-      <div class="process-list">
+            <div class="process-phase">
+              <div class="process-phase-meta">
+                <span class="process-phase-num">01</span>
+                <span class="process-phase-title">Первый контакт</span>
+              </div>
+              <div class="process-phase-body">
+                <p>Я задам несколько уточняющих вопросов по вашему обращению и предложу возможное время для первой встречи.</p>
+                <p>После согласования вы подтверждаете запись и вносите полную предоплату за первую сессию.</p>
+              </div>
+            </div>
 
-        <div class="process-phase">
-          <div class="process-phase-meta">
-            <span class="process-phase-num">01</span>
-            <span class="process-phase-title">Первый контакт</span>
-          </div>
-          <div class="process-phase-body">
-            <p>Я задам несколько уточняющих вопросов по вашему обращению и предложу возможное время для первой встречи.</p>
-            <p>После согласования вы подтверждаете запись и вносите полную предоплату за первую сессию.</p>
+            <div class="process-phase">
+              <div class="process-phase-meta">
+                <span class="process-phase-num">02</span>
+                <span class="process-phase-title">Первая встреча</span>
+              </div>
+              <div class="process-phase-body">
+                <p>Я подробно расскажу о плане ближайших сессий и проведу диагностическое интервью.</p>
+                <p>Мы поговорим не только о запросе, но и о вашей жизни в целом. Это важно для формирования полной картины и более глубокого понимания вашей ситуации.</p>
+                <p>Если вас всё устраивает, мы заключаем рабочий контракт (сеттинг) и продолжаем работу.</p>
+              </div>
+            </div>
+
+            <div class="process-phase">
+              <div class="process-phase-meta">
+                <span class="process-phase-num">03</span>
+                <span class="process-phase-title">Терапия</span>
+              </div>
+              <div class="process-phase-body">
+                <p>В процессе мы будем регулярно подводить итоги, при необходимости корректировать запрос и ставить новые цели.</p>
+              </div>
+            </div>
+
+            <div class="process-phase">
+              <div class="process-phase-meta">
+                <span class="process-phase-num">04</span>
+                <span class="process-phase-title">Завершение</span>
+              </div>
+              <div class="process-phase-body">
+                <p>Если мы принимаем решение завершить работу, для этого потребуется провести 2–3 заключительные встречи, чтобы подвести итоги и правильно завершиться.</p>
+                <p>После завершения или перерыва вы всегда можете вернуться к работе со мной. Это не представляет сложности и, скорее, гарантирует вашу безопасность в наших терапевтических отношениях.</p>
+              </div>
+            </div>
+
           </div>
         </div>
-
-        <div class="process-phase">
-          <div class="process-phase-meta">
-            <span class="process-phase-num">02</span>
-            <span class="process-phase-title">Первая встреча</span>
-          </div>
-          <div class="process-phase-body">
-            <p>Я подробно расскажу о плане ближайших сессий и проведу диагностическое интервью.</p>
-            <p>Мы поговорим не только о запросе, но и о вашей жизни в целом. Это важно для формирования полной картины и более глубокого понимания вашей ситуации.</p>
-            <p>Если вас всё устраивает, мы заключаем рабочий контракт (сеттинг) и продолжаем работу.</p>
-          </div>
+        <div class="hiw-photo">
+          <img src="images/photo-2.jpg" alt="Как устроена работа">
         </div>
-
-        <div class="process-phase">
-          <div class="process-phase-meta">
-            <span class="process-phase-num">03</span>
-            <span class="process-phase-title">Терапия</span>
-          </div>
-          <div class="process-phase-body">
-            <p>В процессе мы будем регулярно подводить итоги, при необходимости корректировать запрос и ставить новые цели.</p>
-          </div>
-        </div>
-
-        <div class="process-phase">
-          <div class="process-phase-meta">
-            <span class="process-phase-num">04</span>
-            <span class="process-phase-title">Завершение</span>
-          </div>
-          <div class="process-phase-body">
-            <p>Если мы принимаем решение завершить работу, для этого потребуется провести 2–3 заключительные встречи, чтобы подвести итоги и правильно завершиться.</p>
-            <p>После завершения или перерыва вы всегда можете вернуться к работе со мной. Это не представляет сложности и, скорее, гарантирует вашу безопасность в наших терапевтических отношениях.</p>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
@@ -977,6 +1241,9 @@
     <div class="formats-inner">
 
       <h2 class="section-title">Форматы терапии</h2>
+      <div class="formats-photo">
+        <img src="images/photo-3.jpg" alt="Форматы терапии">
+      </div>
       <div class="formats-grid">
         <div class="format-card">
           <p class="format-card-label">Краткосрочная терапия</p>
@@ -989,6 +1256,36 @@
           <h3 class="format-card-title">От нескольких месяцев</h3>
           <p class="format-card-desc">Для глубокой проработки: изменение устойчивых паттернов, работа с характером, исследование себя и построение нового способа проживать жизнь.</p>
           <span class="format-tag">Онлайн и офлайн</span>
+        </div>
+      </div>
+      <div class="formats-cta">
+        <a href="https://t.me/jencherkas" target="_blank" rel="noopener" class="btn-primary">Записаться на консультацию</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── EDUCATION ───────────────────────────────────────────── -->
+  <section class="education" id="education">
+    <div class="edu-inner">
+      <h2 class="section-title">Образование</h2>
+      <div class="edu-grid">
+        <div class="edu-list">
+          <div class="edu-item">
+            <p class="edu-item-name">Высшая Школа Экономики</p>
+            <p class="edu-item-detail">Факультет социальных наук, департамент психологии · 2016</p>
+          </div>
+          <div class="edu-item">
+            <p class="edu-item-name">Московский институт психоанализа</p>
+          </div>
+          <div class="edu-item">
+            <p class="edu-item-name">Московский Институт Гештальт-анализа и супервизии</p>
+            <p class="edu-item-detail">1 ступень · 2025</p>
+          </div>
+        </div>
+        <div class="edu-certs">
+          <div class="cert-card">Сертификат</div>
+          <div class="cert-card">Сертификат</div>
+          <div class="cert-card">Сертификат</div>
         </div>
       </div>
     </div>
@@ -1048,11 +1345,33 @@
   <section class="price" id="price">
     <div class="price-inner">
       <p class="section-label">Стоимость</p>
-      <div class="price-card">
-        <p class="price-label">Индивидуальная сессия</p>
-        <p class="price-value">3 000 ₽</p>
-        <p class="price-duration">50 минут</p>
-        <p class="price-note">Онлайн и офлайн</p>
+      <div class="price-layout">
+        <div class="price-left">
+          <div class="price-card">
+            <p class="price-label">Индивидуальная сессия</p>
+            <p class="price-value">3 000 ₽</p>
+            <p class="price-duration">50 минут</p>
+            <p class="price-note">Онлайн и офлайн</p>
+          </div>
+          <a href="https://t.me/jencherkas" target="_blank" rel="noopener" class="btn-primary">Записаться на консультацию</a>
+        </div>
+        <div class="price-right">
+          <p class="contacts-title">Контакты</p>
+          <div class="contacts-block">
+            <div class="contact-item">
+              <p class="contact-label">Телефон</p>
+              <a href="tel:+79153425671" class="contact-value">+7 915 342-56-71</a>
+            </div>
+            <div class="contact-item">
+              <p class="contact-label">Почта</p>
+              <a href="mailto:j.konstantinova39@gmail.com" class="contact-value">j.konstantinova39@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <p class="contact-label">Офис</p>
+              <span class="contact-value">Рядом с м. Проспект Мира</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
