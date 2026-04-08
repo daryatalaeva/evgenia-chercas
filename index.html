@@ -287,17 +287,24 @@
 
     /* ─── HOW IT WORKS ───────────────────────────────────────── */
 
-    .how-it-works {
+    #how {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      min-height: 100vh;
       background: var(--dark-brown);
-      padding: 64px 60px;
     }
 
-    .how-it-works .section-label {
-      color: rgba(217, 206, 188, 0.6);
+    #how .how-content {
+      padding: 40px 48px 40px 40px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 0 !important;
     }
 
-    .how-it-works .section-title {
-      color: var(--cream);
+    #how h2 {
+      font-size: 36px !important;
+      color: var(--cream) !important;
+      margin-bottom: 16px !important;
     }
 
     .process-list {
@@ -306,23 +313,24 @@
 
     .process-phase {
       display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 60px;
-      padding: 52px 0;
+      grid-template-columns: 160px 1fr;
+      gap: 32px;
+      padding: 14px 0 !important;
+      margin: 0 !important;
       border-bottom: 1px solid rgba(217, 206, 188, 0.12);
-      align-items: center;
+      align-items: start;
     }
 
     .process-phase-meta {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 6px;
     }
 
     .process-phase-num {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
-      font-size: 3.8rem;
+      font-size: 2.4rem;
       color: rgba(217, 206, 188, 0.14);
       line-height: 1;
     }
@@ -330,8 +338,8 @@
     .process-phase-title {
       font-family: 'Jost', sans-serif;
       font-weight: 400;
-      font-size: 0.68rem;
-      letter-spacing: 0.25em;
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--sand);
     }
@@ -339,41 +347,33 @@
     .process-phase-body {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 4px;
       width: 100%;
     }
 
     .process-phase-body p {
       font-family: 'Jost', sans-serif;
       font-weight: 300;
-      font-size: 1rem;
+      font-size: 14px;
       color: rgba(247, 242, 234, 0.82);
-      line-height: 1.8;
+      line-height: 1.5;
+      margin: 4px 0;
     }
 
-    .process-phase-body .phase-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 2px;
+    #how .how-photo {
+      padding: 0 !important;
+      margin: 0 !important;
+      height: 100% !important;
+      align-self: stretch !important;
+      overflow: hidden !important;
     }
 
-    .process-phase-body .phase-list li {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 1rem;
-      color: rgba(247, 242, 234, 0.82);
-      line-height: 1.75;
-      padding-left: 20px;
-      position: relative;
-    }
-
-    .process-phase-body .phase-list li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: rgba(217, 206, 188, 0.35);
+    #how .how-photo img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center center !important;
+      display: block !important;
     }
 
     /* ─── FORMATS ────────────────────────────────────────────── */
@@ -751,35 +751,6 @@
 
     /* ─── RESPONSIVE ─────────────────────────────────────────── */
 
-    /* ─── HOW IT WORKS — TWO COLUMN ─────────────────────────── */
-
-    .hiw-layout {
-      display: grid;
-      grid-template-columns: 60% 40%;
-      align-items: stretch;
-      gap: 48px;
-    }
-
-    .hiw-steps {
-      /* content lives here */
-    }
-
-    .hiw-photo {
-      position: relative;
-      overflow: hidden;
-      min-height: 480px;
-    }
-
-    .hiw-photo img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
 
     /* ─── PHOTO DIVIDER (photo-4) ────────────────────────────── */
 
@@ -962,17 +933,14 @@
       nav { padding: 20px 36px; }
       section { padding: 80px 36px; }
       .hero-content { padding: 120px 36px 80px; }
-      .how-it-works { padding: 64px 36px; }
       .section-works { padding: 80px 36px 40px; }
       .formats { padding: 80px 36px; }
       .faq { padding: 80px 36px; }
       .price { padding: 80px 36px; }
       .education { padding: 80px 36px; }
       .section-not-working { padding: 80px 36px 40px; }
-      .process-phase { grid-template-columns: 180px 1fr; gap: 40px; padding: 40px 0; }
       .cta { padding: 90px 36px; }
       footer { padding: 28px 36px; }
-      .hiw-layout { gap: 32px; }
       .price-layout { gap: 40px; }
       .edu-grid { gap: 48px; }
     }
@@ -982,7 +950,7 @@
         padding: 18px 24px;
       }
 
-      .process-phase { grid-template-columns: 1fr; gap: 16px; padding: 36px 0; }
+      .process-phase { grid-template-columns: 1fr; gap: 16px; padding: 14px 0 !important; }
 
       .hero {
         display: block;
@@ -1047,9 +1015,22 @@
       section,
       .formats,
       .faq,
-      .price,
-      .how-it-works {
+      .price {
         padding: 64px 24px;
+      }
+
+      #how {
+        grid-template-columns: 1fr !important;
+        min-height: auto !important;
+      }
+
+      #how .how-content {
+        padding: 40px 24px !important;
+      }
+
+      #how .how-photo {
+        height: 60vw !important;
+        order: -1;
       }
 
       #works {
@@ -1129,16 +1110,6 @@
       }
 
 
-      .hiw-layout {
-        grid-template-columns: 1fr;
-        gap: 0;
-      }
-
-      .hiw-photo {
-        order: -1;
-        min-height: 280px;
-        position: relative;
-      }
 
       .photo-section-divider {
         height: 260px;
@@ -1257,64 +1228,60 @@
 
   <div class="divider"></div>
 
-  <!-- ─── PROCESS ──────────────────────────────────────────── -->
-  <section class="how-it-works" id="process">
-    <div style="max-width:1200px;margin:0 auto;">
-      <div class="hiw-layout">
-        <div class="hiw-steps">
-          <h2 class="section-title">Как устроена работа</h2>
-          <div class="process-list">
+  <!-- ─── HOW IT WORKS ────────────────────────────────────── -->
+  <section id="how">
+    <div class="how-content">
+      <h2 class="section-title">Как устроена работа</h2>
+      <div class="process-list">
 
-            <div class="process-phase">
-              <div class="process-phase-meta">
-                <span class="process-phase-num">01</span>
-                <span class="process-phase-title">Первый контакт</span>
-              </div>
-              <div class="process-phase-body">
-                <p>Я задам несколько уточняющих вопросов по вашему обращению и предложу возможное время для первой встречи.</p>
-                <p>После согласования вы подтверждаете запись и вносите полную предоплату за первую сессию.</p>
-              </div>
-            </div>
-
-            <div class="process-phase">
-              <div class="process-phase-meta">
-                <span class="process-phase-num">02</span>
-                <span class="process-phase-title">Первая встреча</span>
-              </div>
-              <div class="process-phase-body">
-                <p>Я подробно расскажу о плане ближайших сессий и проведу диагностическое интервью.</p>
-                <p>Мы поговорим не только о запросе, но и о вашей жизни в целом. Это важно для формирования полной картины и более глубокого понимания вашей ситуации.</p>
-                <p>Если вас всё устраивает, мы заключаем рабочий контракт (сеттинг) и продолжаем работу.</p>
-              </div>
-            </div>
-
-            <div class="process-phase">
-              <div class="process-phase-meta">
-                <span class="process-phase-num">03</span>
-                <span class="process-phase-title">Терапия</span>
-              </div>
-              <div class="process-phase-body">
-                <p>В процессе мы будем регулярно подводить итоги, при необходимости корректировать запрос и ставить новые цели.</p>
-              </div>
-            </div>
-
-            <div class="process-phase">
-              <div class="process-phase-meta">
-                <span class="process-phase-num">04</span>
-                <span class="process-phase-title">Завершение</span>
-              </div>
-              <div class="process-phase-body">
-                <p>Если мы принимаем решение завершить работу, для этого потребуется провести 2–3 заключительные встречи, чтобы подвести итоги и правильно завершиться.</p>
-                <p>После завершения или перерыва вы всегда можете вернуться к работе со мной. Это не представляет сложности и, скорее, гарантирует вашу безопасность в наших терапевтических отношениях.</p>
-              </div>
-            </div>
-
+        <div class="process-phase">
+          <div class="process-phase-meta">
+            <span class="process-phase-num">01</span>
+            <span class="process-phase-title">Первый контакт</span>
+          </div>
+          <div class="process-phase-body">
+            <p>Я задам несколько уточняющих вопросов по вашему обращению и предложу возможное время для первой встречи.</p>
+            <p>После согласования вы подтверждаете запись и вносите полную предоплату за первую сессию.</p>
           </div>
         </div>
-        <div class="hiw-photo">
-          <img src="images/photo-2.jpg" alt="Как устроена работа">
+
+        <div class="process-phase">
+          <div class="process-phase-meta">
+            <span class="process-phase-num">02</span>
+            <span class="process-phase-title">Первая встреча</span>
+          </div>
+          <div class="process-phase-body">
+            <p>Я подробно расскажу о плане ближайших сессий и проведу диагностическое интервью.</p>
+            <p>Мы поговорим не только о запросе, но и о вашей жизни в целом. Это важно для формирования полной картины и более глубокого понимания вашей ситуации.</p>
+            <p>Если вас всё устраивает, мы заключаем рабочий контракт (сеттинг) и продолжаем работу.</p>
+          </div>
         </div>
+
+        <div class="process-phase">
+          <div class="process-phase-meta">
+            <span class="process-phase-num">03</span>
+            <span class="process-phase-title">Терапия</span>
+          </div>
+          <div class="process-phase-body">
+            <p>В процессе мы будем регулярно подводить итоги, при необходимости корректировать запрос и ставить новые цели.</p>
+          </div>
+        </div>
+
+        <div class="process-phase">
+          <div class="process-phase-meta">
+            <span class="process-phase-num">04</span>
+            <span class="process-phase-title">Завершение</span>
+          </div>
+          <div class="process-phase-body">
+            <p>Если мы принимаем решение завершить работу, для этого потребуется провести 2–3 заключительные встречи, чтобы подвести итоги и правильно завершиться.</p>
+            <p>После завершения или перерыва вы всегда можете вернуться к работе со мной. Это не представляет сложности и, скорее, гарантирует вашу безопасность в наших терапевтических отношениях.</p>
+          </div>
+        </div>
+
       </div>
+    </div>
+    <div class="how-photo">
+      <img src="images/photo-3.jpg" alt="Как устроена работа">
     </div>
   </section>
 
