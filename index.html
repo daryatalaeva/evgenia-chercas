@@ -85,17 +85,20 @@
     /* ─── HERO ───────────────────────────────────────────────── */
 
     .hero {
-      height: 100vh;
       display: grid;
       grid-template-columns: 1fr 1fr;
+      height: 100vh;
       overflow: hidden;
+      align-items: center;
     }
 
     .hero-content {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 100px 60px 60px 60px;
+      height: 100%;
+      padding: 40px 60px 40px 60px;
+      box-sizing: border-box;
     }
 
     .hero-label {
@@ -105,16 +108,16 @@
       letter-spacing: 0.28em;
       text-transform: uppercase;
       color: var(--warm-brown);
-      margin-bottom: 32px;
+      margin-bottom: 16px;
     }
 
     .hero-name {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
-      font-size: clamp(4.5rem, 8vw, 7.5rem);
+      font-size: clamp(48px, 5.5vw, 76px);
       line-height: 0.92;
       color: var(--text);
-      margin-bottom: 44px;
+      margin-bottom: 24px;
     }
 
     .hero-name span {
@@ -129,7 +132,7 @@
       line-height: 1.75;
       color: var(--warm-brown);
       max-width: 420px;
-      margin-bottom: 52px;
+      margin-bottom: 28px;
       border-left: 1px solid var(--sand);
       padding-left: 20px;
     }
@@ -157,7 +160,7 @@
     }
 
     .hero-photo {
-      position: relative;
+      height: 100vh;
       overflow: hidden;
     }
 
@@ -165,7 +168,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center top;
+      object-position: top center;
       display: block;
     }
 
@@ -659,16 +662,91 @@
       letter-spacing: 0.06em;
     }
 
-    /* ─── SECTION WRAPPERS ───────────────────────────────────── */
+    /* ─── WORKS ──────────────────────────────────────────────── */
 
-    .section-works {
-      padding: 110px 60px 55px;
+    #works {
+      display: grid;
+      grid-template-columns: 40% 60%;
+      min-height: 100vh;
       background: var(--cream);
     }
 
-    .section-works .topics-list {
+    .works-photo {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .works-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .works-content {
+      padding: 64px 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .works-content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(32px, 3.5vw, 48px);
+      color: var(--text);
+      line-height: 1.12;
+      margin-bottom: 0;
+    }
+
+    .works-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
       display: grid;
       grid-template-columns: 1fr 1fr;
+      border-top: 1px solid rgba(140, 123, 107, 0.2);
+    }
+
+    .works-list li {
+      padding: 11px 12px 11px 0;
+      border-bottom: 1px solid rgba(140, 123, 107, 0.2);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .works-list li:nth-last-child(1),
+    .works-list li:nth-last-child(2) {
+      border-bottom: none;
+    }
+
+    .works-divider {
+      border: none;
+      border-top: 1px solid rgba(140, 123, 107, 0.2);
+      margin: 0;
+    }
+
+    .not-works-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid rgba(140, 123, 107, 0.2);
+    }
+
+    .not-works-list li {
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(140, 123, 107, 0.2);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.5;
     }
 
     /* ─── RESPONSIVE ─────────────────────────────────────────── */
@@ -908,7 +986,7 @@
 
       .hero {
         display: block;
-        min-height: auto;
+        height: auto;
       }
 
       .hero > .hero-photo {
@@ -974,16 +1052,23 @@
         padding: 64px 24px;
       }
 
-      .section-works {
-        padding: 64px 24px 32px;
-      }
-
-      .section-works .topics-list {
+      #works {
         grid-template-columns: 1fr;
+        min-height: auto;
       }
 
-      .section-not-working {
-        padding: 56px 24px 28px;
+      .works-photo {
+        position: relative;
+        height: 60vw;
+      }
+
+      .works-content {
+        padding: 40px 24px;
+        gap: 32px;
+      }
+
+      .works-list {
+        grid-template-columns: 1fr;
       }
 
       .cta {
@@ -1042,6 +1127,7 @@
         margin-bottom: 44px;
         font-size: 28px;
       }
+
 
       .hiw-layout {
         grid-template-columns: 1fr;
@@ -1136,41 +1222,36 @@
 
   <div class="divider"></div>
 
-  <!-- ─── WITH WHAT I WORK ───────────────────────────────────── -->
-  <section class="section-works" id="works">
-    <div class="works-inner">
-
-      <h2 class="section-title">С чем я работаю</h2>
-      <div class="topics-list">
-        <div class="topic-item">Пониженное настроение</div>
-        <div class="topic-item">Состояния апатии и депрессивные настроения</div>
-        <div class="topic-item">Нехватка мотивации</div>
-        <div class="topic-item">Отсутствие ясных желаний и стремлений</div>
-        <div class="topic-item">Тревожность</div>
-        <div class="topic-item">Проблемы со сном</div>
-        <div class="topic-item">Эмоциональное выгорание</div>
-        <div class="topic-item">Вопросы, связанные с отношениями</div>
-        <div class="topic-item">Поиск себя и жизненных смыслов</div>
-        <div class="topic-item">Страхи: одиночества, смерти, ощущения бессмысленности</div>
-      </div>
+  <!-- ─── WORKS ────────────────────────────────────────────── -->
+  <section id="works">
+    <div class="works-photo">
+      <img src="images/photo-2.jpg" alt="">
     </div>
-  </section>
-
-  <!-- ─── PHOTO DIVIDER ────────────────────────────────────── -->
-  <div class="photo-section-divider">
-    <img src="images/photo-4.jpg" alt="">
-  </div>
-
-  <!-- ─── NOT WORKING WITH ──────────────────────────────────── -->
-  <section class="section-not-working">
-    <div class="works-inner">
-
-      <h2 class="section-title">С кем/чем не работаю</h2>
-      <div class="topics-list">
-        <div class="topic-item">Лица младше 18 лет</div>
-        <div class="topic-item">Суицидальные риски</div>
-        <div class="topic-item">Клинические запросы — могу помочь с рекомендацией специалиста</div>
+    <div class="works-content">
+      <div>
+        <h2>С чем я работаю</h2>
       </div>
+      <ul class="works-list">
+        <li>Пониженное настроение</li>
+        <li>Состояния апатии и депрессивные настроения</li>
+        <li>Нехватка мотивации</li>
+        <li>Отсутствие ясных желаний и стремлений</li>
+        <li>Тревожность</li>
+        <li>Проблемы со сном</li>
+        <li>Эмоциональное выгорание</li>
+        <li>Вопросы, связанные с отношениями</li>
+        <li>Поиск себя и жизненных смыслов</li>
+        <li>Страхи: одиночества, смерти, ощущения бессмысленности</li>
+      </ul>
+      <hr class="works-divider">
+      <div>
+        <h2>С кем/чем не работаю</h2>
+      </div>
+      <ul class="not-works-list">
+        <li>Лица младше 18 лет</li>
+        <li>Суицидальные риски</li>
+        <li>Клинические запросы — могу помочь с рекомендацией специалиста</li>
+      </ul>
     </div>
   </section>
 
