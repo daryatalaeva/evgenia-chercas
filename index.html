@@ -22,6 +22,12 @@
       --warm-brown: #8C7B6B;
       --dark-brown: #3D3028;
       --text: #2C2420;
+      --line: rgba(140, 123, 107, 0.2);
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
     }
 
     html {
@@ -33,6 +39,7 @@
       color: var(--text);
       font-family: 'Jost', sans-serif;
       font-weight: 300;
+      font-size: 15px;
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
@@ -88,8 +95,8 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       height: 100vh;
-      overflow: hidden;
-      align-items: center;
+      margin: 0;
+      padding: 0;
     }
 
     .hero-content {
@@ -97,17 +104,11 @@
       flex-direction: column;
       justify-content: center;
       height: 100%;
-      padding: 40px 60px 40px 60px;
-      box-sizing: border-box;
+      padding: 80px 60px 40px 40px;
     }
 
     .hero-label {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.68rem;
-      font-weight: 400;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--warm-brown);
+      font-size: 11px;
       margin-bottom: 16px;
     }
 
@@ -160,8 +161,10 @@
     }
 
     .hero-photo {
-      height: 100vh;
+      height: calc(100vh - 24px);
       overflow: hidden;
+      margin: 0;
+      padding-top: 24px;
     }
 
     .hero-photo img {
@@ -205,26 +208,50 @@
     /* ─── SECTION BASE ───────────────────────────────────────── */
 
     section {
-      padding: 110px 60px;
+      padding: 56px 0;
     }
 
-    .section-label {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.66rem;
+    #works, #how, #formats {
+      padding: 0;
+    }
+
+    /* ─── TYPOGRAPHY ─────────────────────────────────────────── */
+
+    h1, h2, h3 {
+      font-family: 'Cormorant Garamond', serif;
       font-weight: 400;
-      letter-spacing: 0.28em;
+    }
+
+    h2 {
+      font-size: clamp(28px, 3vw, 42px);
+      line-height: 1.15;
+      margin-bottom: 32px;
+    }
+
+    li, p {
+      font-size: 14px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+    }
+
+    .section-label,
+    [class*="label"],
+    [class*="eyebrow"] {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--warm-brown);
-      margin-bottom: 16px;
     }
 
     .section-title {
       font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(32px, 3.5vw, 48px);
-      line-height: 1.12;
+      font-weight: 400;
+      font-size: clamp(28px, 3vw, 42px);
+      line-height: 1.15;
       color: var(--text);
-      margin-bottom: 64px;
+      margin-bottom: 32px;
     }
 
     .divider {
@@ -379,64 +406,76 @@
 
     /* ─── FORMATS ────────────────────────────────────────────── */
 
-    .formats {
-      background: var(--beige);
+    #formats {
+      display: grid;
+      grid-template-columns: 45% 55%;
+      height: 100vh;
+      overflow: hidden;
+      padding: 0;
     }
 
-    .formats-inner {
-      max-width: 1200px;
-      margin: 0 auto;
+    .formats-photo-col {
+      overflow: hidden;
+    }
+
+    .formats-photo-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .formats-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 48px 48px 48px 56px;
+    }
+
+    .formats-content h2 {
+      color: var(--text);
+    }
+
+    .formats-subtitle {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      color: var(--warm-brown);
+      margin-bottom: 32px;
     }
 
     .formats-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2px;
+      gap: 16px;
     }
 
     .format-card {
-      background: var(--cream);
-      padding: 52px 48px;
-      border: 1px solid rgba(140, 123, 107, 0.15);
+      background: var(--beige);
+      padding: 24px;
     }
 
     .format-card-label {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.66rem;
-      font-weight: 400;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--warm-brown);
-      margin-bottom: 20px;
+      margin-bottom: 12px;
     }
 
     .format-card-title {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
-      font-size: 2rem;
+      font-size: 1.5rem;
       color: var(--text);
-      margin-bottom: 20px;
+      margin-bottom: 12px;
+      line-height: 1.2;
     }
 
     .format-card-desc {
       font-family: 'Jost', sans-serif;
       font-weight: 300;
-      font-size: 0.95rem;
+      font-size: 0.88rem;
       color: var(--warm-brown);
-      line-height: 1.7;
-      margin-bottom: 28px;
-    }
-
-    .format-tag {
-      display: inline-block;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 400;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--warm-brown);
-      border: 1px solid var(--sand);
-      padding: 7px 14px;
+      line-height: 1.65;
     }
 
     /* ─── FAQ ────────────────────────────────────────────────── */
@@ -535,66 +574,100 @@
 
     /* ─── PRICE ──────────────────────────────────────────────── */
 
-    .price {
-      background: var(--beige);
-      text-align: left;
+    #price {
+      padding: 0;
     }
 
     .price-inner {
       max-width: 1200px;
       margin: 0 auto;
+      padding: 72px 0;
     }
 
-    .price-card {
-      display: block;
-      background: var(--cream);
-      border: 1px solid rgba(140, 123, 107, 0.2);
-      padding: 64px 80px;
-      text-align: center;
-    }
-
-    .price-label {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.66rem;
-      font-weight: 400;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--warm-brown);
-      margin-bottom: 18px;
-    }
-
-    .price-value {
+    .price-inner h2 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
-      font-size: 3.6rem;
+      font-size: clamp(32px, 3.5vw, 48px);
+      line-height: 1.12;
       color: var(--text);
-      line-height: 1;
-      margin-bottom: 8px;
+      margin-bottom: 40px;
     }
 
-    .price-duration {
+    .price-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--line);
+    }
+
+    .price-col {
+      background: var(--beige);
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .price-col-label {
+      margin-bottom: 0;
+    }
+
+    .price-amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--text);
+    }
+
+    .price-meta {
       font-family: 'Jost', sans-serif;
       font-weight: 300;
-      font-size: 0.9rem;
+      font-size: 0.875rem;
       color: var(--warm-brown);
-      letter-spacing: 0.06em;
-      margin-bottom: 28px;
     }
 
-    .price-note {
+    .price-divider {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 0;
+    }
+
+    .price-col .btn-primary {
+      align-self: flex-start;
+    }
+
+    .contact-row {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-row:first-of-type {
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-row-label {
+      opacity: 0.5;
+      margin-bottom: 4px;
+    }
+
+    .contact-row-value {
       font-family: 'Jost', sans-serif;
-      font-size: 0.66rem;
-      font-weight: 400;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--sand);
+      font-weight: 300;
+      font-size: 0.9375rem;
+      color: var(--text);
+      text-decoration: none;
+      display: block;
+    }
+
+    .contact-row-value:hover {
+      color: var(--warm-brown);
     }
 
     /* ─── NOT WORKING WITH ───────────────────────────────────── */
 
     .section-not-working {
       background: var(--beige);
-      padding: 110px 60px 55px;
     }
 
 
@@ -603,7 +676,7 @@
     .cta {
       background: var(--dark-brown);
       text-align: center;
-      padding: 120px 60px;
+      padding: 64px 0;
     }
 
     .cta-title {
@@ -619,13 +692,13 @@
       display: inline-block;
       font-family: 'Jost', sans-serif;
       font-weight: 400;
-      font-size: 0.72rem;
-      letter-spacing: 0.22em;
+      font-size: 11px;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--dark-brown);
       background: var(--cream);
       text-decoration: none;
-      padding: 18px 42px;
+      padding: 18px 40px;
       border: 1px solid var(--cream);
       border-radius: 6px;
       transition: background 0.3s, color 0.3s;
@@ -670,6 +743,7 @@
       grid-template-columns: 40% 60%;
       min-height: 100vh;
       background: var(--cream);
+      padding: 0;
     }
 
     .works-photo {
@@ -769,33 +843,15 @@
       display: block;
     }
 
-    /* ─── FORMATS PHOTO & CTA ────────────────────────────────── */
-
-    .formats-photo {
-      width: 100%;
-      height: 360px;
-      overflow: hidden;
-      margin-bottom: 40px;
-    }
-
-    .formats-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
-
     .formats-cta {
-      margin-top: 40px;
-      text-align: center;
+      margin-top: 32px;
+      align-self: flex-start;
     }
 
     /* ─── EDUCATION ──────────────────────────────────────────── */
 
     .education {
       background: var(--beige);
-      padding: 110px 60px;
     }
 
     .edu-inner {
@@ -861,88 +917,12 @@
       color: var(--warm-brown);
     }
 
-    /* ─── PRICE TWO COLUMN ───────────────────────────────────── */
-
-    .price-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: start;
-    }
-
-    .price-left {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-    }
-
-    .price-right {
-      background: var(--cream);
-      border: 1px solid rgba(140, 123, 107, 0.2);
-      padding: 48px;
-    }
-
-    .contacts-title {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.62rem;
-      font-weight: 400;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--warm-brown);
-      margin-bottom: 0;
-    }
-
-    .contacts-block {
-      display: flex;
-      flex-direction: column;
-      margin-top: 0;
-    }
-
-    .contact-item {
-      padding: 20px 0;
-      border-bottom: 1px solid rgba(140, 123, 107, 0.15);
-    }
-
-    .contact-item:first-child {
-      border-top: 1px solid rgba(140, 123, 107, 0.15);
-    }
-
-    .contact-label {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.6rem;
-      font-weight: 400;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--warm-brown);
-      margin-bottom: 6px;
-    }
-
-    .contact-value {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 1rem;
-      color: var(--text);
-      text-decoration: none;
-      display: block;
-    }
-
-    .contact-value:hover {
-      color: var(--warm-brown);
-    }
 
     @media (max-width: 1024px) {
       nav { padding: 20px 36px; }
-      section { padding: 80px 36px; }
+      section { padding: 60px 0; }
       .hero-content { padding: 120px 36px 80px; }
-      .section-works { padding: 80px 36px 40px; }
-      .formats { padding: 80px 36px; }
-      .faq { padding: 80px 36px; }
-      .price { padding: 80px 36px; }
-      .education { padding: 80px 36px; }
-      .section-not-working { padding: 80px 36px 40px; }
-      .cta { padding: 90px 36px; }
       footer { padding: 28px 36px; }
-      .price-layout { gap: 40px; }
       .edu-grid { gap: 48px; }
     }
 
@@ -1013,11 +993,8 @@
         text-align: center;
       }
 
-      section,
-      .formats,
-      .faq,
-      .price {
-        padding: 64px 24px;
+      section {
+        padding: 48px 0;
       }
 
       #how {
@@ -1051,10 +1028,6 @@
 
       .works-list {
         grid-template-columns: 1fr;
-      }
-
-      .cta {
-        padding: 72px 24px;
       }
 
       footer {
@@ -1093,20 +1066,7 @@
         padding-left: 24px;
       }
 
-      .formats-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .format-card {
-        padding: 40px 28px;
-      }
-
-      .price-card {
-        padding: 44px 36px;
-      }
-
       .section-title {
-        margin-bottom: 44px;
         font-size: 28px;
       }
 
@@ -1114,14 +1074,6 @@
 
       .photo-section-divider {
         height: 260px;
-      }
-
-      .formats-photo {
-        height: 260px;
-      }
-
-      .education {
-        padding: 64px 24px;
       }
 
       .edu-grid {
@@ -1133,13 +1085,25 @@
         grid-template-columns: 1fr 1fr 1fr;
       }
 
-      .price-layout {
+      .price-columns {
         grid-template-columns: 1fr;
-        gap: 32px;
       }
 
-      .price-right {
-        padding: 32px 28px;
+      .price-col {
+        padding: 36px 28px;
+      }
+
+      #formats {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+
+      .formats-photo-col {
+        height: 60vw;
+      }
+
+      .formats-content {
+        padding: 40px 24px;
       }
     }
 
@@ -1287,25 +1251,23 @@
   </section>
 
   <!-- ─── FORMATS ───────────────────────────────────────────── -->
-  <section class="formats" id="formats">
-    <div class="formats-inner">
-
-      <h2 class="section-title">Форматы терапии</h2>
-      <div class="formats-photo">
-        <img src="images/photo-3.jpg" alt="Форматы терапии">
-      </div>
+  <section id="formats">
+    <div class="formats-photo-col">
+      <img src="images/photo-4.jpg" alt="Форматы терапии">
+    </div>
+    <div class="formats-content">
+      <h2>Форматы терапии</h2>
+      <p class="formats-subtitle">Онлайн и офлайн · Индивидуальная работа</p>
       <div class="formats-grid">
         <div class="format-card">
-          <p class="format-card-label">Краткосрочная терапия</p>
+          <p class="format-card-label">Краткосрочная</p>
           <h3 class="format-card-title">До 10–15 встреч</h3>
-          <p class="format-card-desc">Подходит для работы с точечными сложностями: конкретная ситуация, острый запрос, необходимость получить поддержку и ясность в определённом вопросе.</p>
-          <span class="format-tag">Онлайн и офлайн</span>
+          <p class="format-card-desc">Конкретная ситуация, острый запрос, поддержка и ясность в определённом вопросе</p>
         </div>
         <div class="format-card">
-          <p class="format-card-label">Долгосрочная терапия</p>
+          <p class="format-card-label">Долгосрочная</p>
           <h3 class="format-card-title">От нескольких месяцев</h3>
-          <p class="format-card-desc">Для глубокой проработки: изменение устойчивых паттернов, работа с характером, исследование себя и построение нового способа проживать жизнь.</p>
-          <span class="format-tag">Онлайн и офлайн</span>
+          <p class="format-card-desc">Изменение устойчивых паттернов, исследование себя, новый способ проживать жизнь</p>
         </div>
       </div>
       <div class="formats-cta">
@@ -1337,6 +1299,42 @@
           <div class="cert-card">Сертификат</div>
           <div class="cert-card">Сертификат</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ─── PRICE ─────────────────────────────────────────────── -->
+  <section id="price">
+    <div class="price-inner">
+      <h2>Стоимость и контакты</h2>
+      <div class="price-columns">
+
+        <div class="price-col">
+          <p class="price-col-label">Индивидуальная сессия</p>
+          <p class="price-amount">3 000 ₽</p>
+          <p class="price-meta">50 минут · Онлайн и офлайн</p>
+          <hr class="price-divider">
+          <a href="https://t.me/jencherkas" target="_blank" rel="noopener" class="btn-primary">Записаться на консультацию</a>
+        </div>
+
+        <div class="price-col">
+          <p class="price-col-label">Контакты</p>
+          <div class="contact-row">
+            <p class="contact-row-label">Телефон</p>
+            <a href="tel:+79153425671" class="contact-row-value">+7 915 342-56-71</a>
+          </div>
+          <div class="contact-row">
+            <p class="contact-row-label">Почта</p>
+            <a href="mailto:j.konstantinova39@gmail.com" class="contact-row-value">j.konstantinova39@gmail.com</a>
+          </div>
+          <div class="contact-row">
+            <p class="contact-row-label">Офис</p>
+            <span class="contact-row-value">Рядом с м. Проспект Мира</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1389,43 +1387,6 @@
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- ─── PRICE ─────────────────────────────────────────────── -->
-  <section class="price" id="price">
-    <div class="price-inner">
-      <p class="section-label">Стоимость</p>
-      <div class="price-layout">
-        <div class="price-left">
-          <div class="price-card">
-            <p class="price-label">Индивидуальная сессия</p>
-            <p class="price-value">3 000 ₽</p>
-            <p class="price-duration">50 минут</p>
-            <p class="price-note">Онлайн и офлайн</p>
-          </div>
-          <a href="https://t.me/jencherkas" target="_blank" rel="noopener" class="btn-primary">Записаться на консультацию</a>
-        </div>
-        <div class="price-right">
-          <p class="contacts-title">Контакты</p>
-          <div class="contacts-block">
-            <div class="contact-item">
-              <p class="contact-label">Телефон</p>
-              <a href="tel:+79153425671" class="contact-value">+7 915 342-56-71</a>
-            </div>
-            <div class="contact-item">
-              <p class="contact-label">Почта</p>
-              <a href="mailto:j.konstantinova39@gmail.com" class="contact-value">j.konstantinova39@gmail.com</a>
-            </div>
-            <div class="contact-item">
-              <p class="contact-label">Офис</p>
-              <span class="contact-value">Рядом с м. Проспект Мира</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ─── CTA ───────────────────────────────────────────────── -->
   <section class="cta" id="contact">
     <h2 class="cta-title">Готовы начать?</h2>
@@ -1435,7 +1396,7 @@
   <!-- ─── FOOTER ────────────────────────────────────────────── -->
   <footer>
     <span class="footer-brand">Евгения Черкас — Гештальт-терапевт</span>
-    <span class="footer-copy">© 2025</span>
+    <span class="footer-copy">© 2026</span>
   </footer>
 
   <!-- ─── SCRIPTS ───────────────────────────────────────────── -->
