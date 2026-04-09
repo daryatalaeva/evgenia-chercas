@@ -15,6 +15,13 @@
       padding: 0;
     }
 
+    .hero-photo-wrapper {
+      padding-top: 32px;
+      background: var(--cream);
+      overflow: hidden;
+      height: 100vh;
+    }
+
     :root {
       --cream: #F7F2EA;
       --beige: #EDE5D8;
@@ -161,10 +168,8 @@
     }
 
     .hero-photo {
-      height: calc(100vh - 24px);
+      height: 100%;
       overflow: hidden;
-      margin: 0;
-      padding-top: 24px;
     }
 
     .hero-photo img {
@@ -1147,12 +1152,20 @@
         <span>Евгения</span>
         <span>Черкас</span>
       </h1>
-      <div class="hero-photo-mobile" id="hero-photo-mobile"></div>
+      <div class="hero-photo-mobile" id="hero-photo-mobile">
+        <img src="images/photo-hero.webp"
+             alt="Евгения Черкас"
+             onerror="this.src='images/photo-hero.jpg'">
+      </div>
       <p class="hero-quote">«Все ответы уже находятся внутри вас. Моя задача — задать верный вопрос, который откроет к ним доступ»</p>
       <a href="https://t.me/jencherkas" target="_blank" rel="noopener" class="btn-primary">Записаться на консультацию</a>
     </div>
-    <div class="hero-photo" id="hero-photo-wrap">
-      <!-- JS вставит img или placeholder -->
+    <div class="hero-photo-wrapper">
+      <div class="hero-photo" id="hero-photo-wrap">
+        <img src="images/photo-hero.webp"
+             alt="Евгения Черкас"
+             onerror="this.src='images/photo-hero.jpg'">
+      </div>
     </div>
   </section>
 
@@ -1401,30 +1414,6 @@
 
   <!-- ─── SCRIPTS ───────────────────────────────────────────── -->
   <script>
-    // ── Hero photo: populate desktop + mobile slots ───────────
-    (function () {
-      var src = 'images/photo-hero.jpg';
-
-      function fillSlot(wrap, isMobile) {
-        var img = new Image();
-        img.src = src;
-        img.alt = 'Евгения Черкас';
-        img.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:top center;display:block;';
-        img.onload = function () { wrap.appendChild(img); };
-        img.onerror = function () {
-          var ph = document.createElement('div');
-          ph.className = 'photo-placeholder';
-          ph.innerHTML =
-            '<span class="photo-placeholder-text">Фото</span>' +
-            '<span class="photo-placeholder-sub">Евгения Черкас</span>';
-          wrap.appendChild(ph);
-        };
-      }
-
-      fillSlot(document.getElementById('hero-photo-wrap'), false);
-      fillSlot(document.getElementById('hero-photo-mobile'), true);
-    })();
-
     // ── FAQ accordion ─────────────────────────────────────────
     document.querySelectorAll('.faq-question').forEach(function (btn) {
       btn.addEventListener('click', function () {
