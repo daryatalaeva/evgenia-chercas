@@ -211,6 +211,31 @@
       color: var(--sand);
     }
 
+    .hero-anchors {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .hero-anchor {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--warm-brown);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(140, 123, 107, 0.3);
+      padding-bottom: 2px;
+      transition: color 0.25s, border-color 0.25s;
+    }
+
+    .hero-anchor:hover {
+      color: var(--text);
+      border-color: var(--text);
+    }
+
     /* ─── SECTION BASE ───────────────────────────────────────── */
 
     section {
@@ -219,6 +244,10 @@
 
     #works, #how, #formats {
       padding: 0;
+    }
+
+    #works, #how, #education, #price {
+      scroll-margin-top: 70px;
     }
 
     /* ─── TYPOGRAPHY ─────────────────────────────────────────── */
@@ -1148,7 +1177,13 @@
         font-size: 28px;
       }
 
+      .hero-anchors {
+        gap: 14px;
+      }
 
+      .hero-anchor {
+        font-size: 10px;
+      }
 
       .photo-section-divider {
         height: 260px;
@@ -1226,6 +1261,12 @@
       </div>
       <p class="hero-quote">«Все ответы уже находятся внутри вас. Моя задача — задать верный вопрос, который откроет к ним доступ»</p>
       <a href="https://t.me/jencherkas" target="_blank" rel="noopener" class="btn-primary">Записаться на консультацию</a>
+      <div class="hero-anchors">
+        <a href="#works" class="hero-anchor">С чем работаю</a>
+        <a href="#how" class="hero-anchor">Как это устроено</a>
+        <a href="#education" class="hero-anchor">Образование</a>
+        <a href="#price" class="hero-anchor">Запись</a>
+      </div>
     </div>
     <div class="hero-photo-wrapper">
       <div class="hero-photo" id="hero-photo-wrap">
