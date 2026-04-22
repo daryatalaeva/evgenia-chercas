@@ -264,9 +264,10 @@
     }
 
     li, p {
-      font-size: 14px;
+      font-size: 16px;
       font-family: 'Jost', sans-serif;
       font-weight: 300;
+      line-height: 1.65;
     }
 
     .section-label,
@@ -316,7 +317,7 @@
     .topic-item {
       font-family: 'Jost', sans-serif;
       font-weight: 300;
-      font-size: 14px;
+      font-size: 16px;
       color: var(--text);
       padding: 13px 0;
       border-bottom: 1px solid rgba(140, 123, 107, 0.18);
@@ -417,9 +418,9 @@
     .process-phase-body p {
       font-family: 'Jost', sans-serif;
       font-weight: 300;
-      font-size: 14px;
+      font-size: 16px;
       color: rgba(247, 242, 234, 0.82);
-      line-height: 1.5;
+      line-height: 1.65;
       margin: 4px 0;
     }
 
@@ -548,7 +549,7 @@
 
     .price-columns {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 2fr 1fr;
       gap: 2px;
       background: var(--line);
     }
@@ -581,7 +582,7 @@
     .price-meta {
       font-family: 'Jost', sans-serif;
       font-weight: 300;
-      font-size: 0.875rem;
+      font-size: 16px;
       color: var(--warm-brown);
       margin-top: -8px;
     }
@@ -669,10 +670,10 @@
 
     .price-format-desc {
       font-family: 'Jost', sans-serif;
-      font-size: 13px;
+      font-size: 16px;
       font-weight: 300;
       color: var(--warm-brown);
-      line-height: 1.5;
+      line-height: 1.65;
     }
 
     /* разделитель */
@@ -708,7 +709,7 @@
     .contact-row-value {
       font-family: 'Jost', sans-serif;
       font-weight: 300;
-      font-size: 14px;
+      font-size: 16px;
       color: var(--text);
       text-decoration: none;
     }
@@ -832,7 +833,7 @@
 
     .works-list {
       list-style: none;
-      padding: 0;
+      padding: 0 0 0 20px;
       margin: 0;
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -841,12 +842,13 @@
 
     .works-list li {
       padding: 11px 12px 11px 0;
+      margin-bottom: 4px;
       border-bottom: 1px solid rgba(140, 123, 107, 0.2);
       font-family: 'Jost', sans-serif;
       font-weight: 300;
-      font-size: 14px;
+      font-size: 16px;
       color: var(--text);
-      line-height: 1.5;
+      line-height: 1.65;
     }
 
     .works-list li:nth-last-child(1),
@@ -854,27 +856,26 @@
       border-bottom: none;
     }
 
-    .works-divider {
-      border: none;
-      border-top: 1px solid rgba(140, 123, 107, 0.2);
-      margin: 0;
+    .not-works-header {
+      margin-top: 32px;
     }
 
     .not-works-list {
       list-style: none;
-      padding: 0;
+      padding: 0 0 0 20px;
       margin: 0;
       border-top: 1px solid rgba(140, 123, 107, 0.2);
     }
 
     .not-works-list li {
       padding: 11px 0;
+      margin-bottom: 4px;
       border-bottom: 1px solid rgba(140, 123, 107, 0.2);
       font-family: 'Jost', sans-serif;
       font-weight: 300;
-      font-size: 14px;
+      font-size: 16px;
       color: var(--text);
-      line-height: 1.5;
+      line-height: 1.65;
     }
 
     /* ─── RESPONSIVE ─────────────────────────────────────────── */
@@ -934,9 +935,9 @@
     .edu-item-name {
       font-family: 'Jost', sans-serif;
       font-weight: 300;
-      font-size: 14px;
+      font-size: 16px;
       color: var(--text);
-      line-height: 1.5;
+      line-height: 1.65;
     }
 
     .edu-item-detail {
@@ -1300,8 +1301,7 @@
         <li>Поиск себя и жизненных смыслов</li>
         <li>Страхи: одиночества, смерти, ощущения бессмысленности</li>
       </ul>
-      <hr class="works-divider">
-      <div>
+      <div class="not-works-header">
         <h2>С кем/чем не работаю</h2>
       </div>
       <ul class="not-works-list">
