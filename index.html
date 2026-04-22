@@ -101,7 +101,7 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 55% 45%;
       height: 100vh;
       margin: 0;
       padding: 0;
@@ -358,7 +358,7 @@
     }
 
     #how .how-content {
-      padding: 40px 48px 40px 40px !important;
+      padding: 64px 48px 64px 60px !important;
       display: flex !important;
       flex-direction: column !important;
       gap: 0 !important;
@@ -894,14 +894,15 @@
 
     .education {
       background: var(--beige);
+      padding: 64px 0;
     }
 
     .edu-inner {
-      max-width: 1200px;
-      margin: 0 auto;
+      padding: 0 60px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      row-gap: 8px;
+      column-gap: 3rem;
       align-items: start;
     }
 
@@ -1381,9 +1382,9 @@
       <div class="edu-certs">
         <div class="cert-carousel" id="certCarousel">
           <div class="cert-track" id="certTrack">
+            <div class="cert-card"><img src="images/nancy.png" alt="Курс Нэнси Мак-Вильямс"></div>
             <div class="cert-card"><img src="images/mtac-1.jpg" alt="Сертификат МТАС 1"></div>
             <div class="cert-card"><img src="images/mtac-2.jpg" alt="Сертификат МТАС 2"></div>
-            <div class="cert-card"><img src="images/nancy.png" alt="Курс Нэнси Мак-Вильямс"></div>
           </div>
           <button class="cert-arrow cert-arrow--prev" id="certPrev" aria-label="Назад">&#8249;</button>
           <button class="cert-arrow cert-arrow--next" id="certNext" aria-label="Вперёд">&#8250;</button>
